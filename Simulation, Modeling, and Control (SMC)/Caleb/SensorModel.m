@@ -16,10 +16,13 @@ doSensorModel = false;
 % velocity measurement will be a function of wheel encoder
 % linear velocity = Wheel radius * angular velocity of (w) wheel
 if(doSensorModel)
-    %Generate a sensor reading
-    w_expect = U(1)/r_wheel;
-    beta_w = 30; %30 %bias 
-    n_w = randn(1) * 5; %30 % zero mean gaussian with a std dev of sigma
+    % Generate a sensor reading
+    % rotational speed expected = linear velocity / wheel radius
+    w_expect = U(1)/r_wheel; 
+    beta_w = 30; % bias sensor value 
+    % simulate noise in the sensor
+    n_w = randn(1) * 5; % zero mean gaussian distribution with a std dev=5
+    % generate the sensor reading with bias and noise
     w_sensor = w_expect + beta_w + n_w;
 
     %Regenerate the state variable

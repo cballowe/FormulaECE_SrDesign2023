@@ -63,20 +63,20 @@ int controlIndex = 0;
 // };
 
 //line
-double controlArray[1][9] = {
-  {1, 10.927, 9.55, 5.366, 9.464, -1, 0, -100, 0}};
+// double controlArray[1][9] = {
+//   {1, 10.927, 9.55, 5.366, 9.464, -1, 0, -100, 0}};
 
 // //circle
 // double controlArray[1][9] = {
 //   {0, 9.415, 9.592, 1.5, 1, 0, 1, 0, 100}};
 
 //minitrack
-// double controlArray[4][9] = {
-//   {1, 9.352, 11.069, 6.823, 11.054, 0, -1, 6.7, 11.054}, 
-//   {0, 6.857, 9.552, 1.5, 1, 1, 0, 6.9, 8.037}, 
-//   {1, 6.959, 8.037, 9.446, 8.058, 1, 0, 9.4, 8.058},
-//   {0, 9.415, 9.592, 1.5, 1, -1, 0, 9.2, 11.069}
-// };
+double controlArray[4][9] = {
+  {1, 9.352, 11.069, 6.823, 11.054, 0, -1, 6.7, 11.054}, 
+  {0, 6.857, 9.552, 1.5, 1, 1, 0, 6.5, 8.037}, 
+  {1, 6.959, 8.037, 9.446, 8.058, 1, 0, 9.4, 8.058},
+  {0, 9.415, 9.592, 1.5, 1, -1, 0, 9.2, 11.069}
+};
 
 double driveTable[4][2] = {
   {78, 0.92}, 
@@ -103,7 +103,7 @@ double steerTable[15][2] = {
   {88, 130}
 }; // % sample data pwm, angle
 
-double dt = 0.01;
+double dt = 0.5;
 double velocity = 1;
 double pozyxInput[2];
 
@@ -224,8 +224,8 @@ void AutoCodeTopLevel(void)
 
 void AutoCodeInitialize(double X[3], double U[2])
 {
-  X[0] = 10.9; // Testing! Xpos: 9.3 for Circ/HalfTrack, 10.9 for line; 1 for track
-  X[1] = 8.5; // Testing! Ypos: 11 for circ/halftrack, 9.5 for line; 8ish for track
+  X[0] = 9.5; // Testing! Xpos: 9.3 for Circ/HalfTrack, 10.9 for line; 1 for track
+  X[1] = 11.2; // Testing! Ypos: 11 for circ/halftrack, 8.5 for line; 8ish for track
   X[2] = M_PI; //-1.5707963267948966; // Testing! heading: pi for circ/halftrack/line, -pi/2 for track
   /*  sample data pwm, speed; */
   /*  sample data pwm, angle */
