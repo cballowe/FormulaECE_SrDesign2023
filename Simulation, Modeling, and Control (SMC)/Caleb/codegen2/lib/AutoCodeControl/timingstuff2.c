@@ -45,9 +45,9 @@ int main(void)
         clock_gettime(CLOCK_REALTIME, &finish);
         sub_timespec(start, finish, &delta);
         //printf("%d.%.9ld\n", (int)delta.tv_sec, delta.tv_nsec);
-        if(delta.tv_nsec > 1000*1000*50)
+        if(delta.tv_nsec > 1000*1000*99.6)
         {
-            printf("%d.%.9ld\n\n\n", (int)delta.tv_sec, delta.tv_nsec);
+            printf("%d.%.9ld\n", (int)delta.tv_sec, delta.tv_nsec);
             clock_gettime(CLOCK_REALTIME, &start);
         }
     }

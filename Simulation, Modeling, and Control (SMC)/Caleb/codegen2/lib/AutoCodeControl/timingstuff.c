@@ -43,6 +43,7 @@ counter( void )
   return (uint64_t)now.tv_sec * UINT64_C(1000000000) + (uint64_t)now.tv_nsec;
 }
 
+
 int main( int argc, char **argv)
 {/*
     int running = 300;
